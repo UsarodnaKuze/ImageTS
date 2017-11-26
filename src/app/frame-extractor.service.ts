@@ -1,6 +1,6 @@
 export class FrameExtractorService {
 
-  constructor(private canvas: HTMLCanvasElement, private video: HTMLVideoElement) {
+  constructor(private canvas: HTMLCanvasElement, private video?: HTMLVideoElement) {
       /*function onend(e) {
       var img;
       // do whatever with the frames
@@ -100,8 +100,13 @@ export class FrameExtractorService {
   }
 
   initCanvas(e) {
-    this.canvas.width = this.video.videoWidth;
-    this.canvas.height = this.video.videoHeight;
+    if (this.video) {
+      this.canvas.width = this.video.videoWidth;
+      this.canvas.height = this.video.videoHeight;
+    } else {
+      this.canvas.width = 640;
+      this.canvas.height = 480;
+    }
   }
 
   public drawRandom() {
@@ -111,6 +116,9 @@ export class FrameExtractorService {
   }
 
   public drawFrame() {
+    if (!this.video) {
+      return;
+    }
     this.initCanvas(null);
     this.video.pause();
     this.ctx.drawImage(this.video, 0, 0);

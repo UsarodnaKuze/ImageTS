@@ -1,11 +1,23 @@
-<video hidden (timeupdate)="timeUpdate()"></video>
-<canvas></canvas>
-<button (click)="fx.drawFrame()">Frame</button>
-<button (click)="fx.drawRandom()">Random</button>
-<button (click)="fx.transformations.grayscale()">Grayscale</button>
-<button (click)="fx.antWar()">Ant War</button>
-<button (click)="drawShades()">Averages</button>
-<input type="text" [(ngModel)]="divider">
+<div class="main">
+        <div class="content">
+                <div>
+                        <canvas #mainCanvas></canvas>
+                </div>
+                <div class="preview">
+                        <video #previewVideo></video>
+                        <canvas #previewCanvas></canvas>        
+                </div>
+        </div>
+        <div class="footer">
+                <button (click)="fx.drawFrame()">Frame</button>
+                <button (click)="fx.drawRandom()">Random</button>
+                <button (click)="fx.transformations.grayscale()">Grayscale</button>
+                <button (click)="fx.antWar()">Ant War</button>
+                <button (click)="drawShades()">Averages</button>
+                <input type="text" [(ngModel)]="divider">
+        </div>
+</div>
+
 <ng-template [ngIf]="averages">
         <span *ngFor="let average of averages">
                 {{average}}
