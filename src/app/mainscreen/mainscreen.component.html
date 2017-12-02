@@ -1,0 +1,15 @@
+<div class="header">
+  <button class="btn btn-primary" (click)="router.navigate(['/'])">Home</button>
+  <button class="btn btn-primary" (click)="router.navigate(['/debugger'])">Debugger</button>
+  <button class="btn btn-primary" (click)="router.navigate(['/game'])">Game</button>
+  <input type="number" [(ngModel)]="global.divider">
+</div>
+<div class="content">
+  <ng-content select="content"></ng-content>
+</div>
+<div class="footer">
+  <ng-content select="footer"></ng-content>
+</div>
+
+
+

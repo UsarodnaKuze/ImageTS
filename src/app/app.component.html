@@ -1,23 +1,7 @@
-<div class="main">
-  <div class="content">
-    <div [ngStyle]="showPreview ? {'display': 'none'} : {}" class="drawer">
-      <canvas (click)="drawRect($event)" #mainCanvas></canvas>
-    </div>
-    <app-debugger *ngIf="showPreview"></app-debugger>
-  </div>
-  <div class="footer">
-    <button class="btn btn-default" (click)="fx.drawFrame()">Frame</button>
-    <button class="btn btn-default" (click)="fx.drawRandom()">Random</button>
-    <button class="btn btn-default" (click)="fx.transformations.grayscale()">Grayscale</button>
-    <button class="btn btn-default" (click)="fx.antWar()">Ant War</button>
-    <button class="btn btn-default" (click)="drawShades()">Averages</button>
-    <button class="btn btn-default" (click)="showPreview = !showPreview">Debugger</button>
-    <input type="text" [(ngModel)]="divider">
-  </div>
-</div>
-
+<router-outlet></router-outlet>
+<!--
 <ng-template [ngIf]="averages">
         <span *ngFor="let average of averages">
                 {{average}}
             </span>
-</ng-template>
+</ng-template>-->

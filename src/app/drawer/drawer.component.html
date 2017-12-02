@@ -1,0 +1,21 @@
+<app-mainscreen>
+  <content>
+    <div class="drawer">
+      <canvas (click)="drawRect($event)" #mainCanvas></canvas>
+    </div>
+  </content>
+  <footer>
+    <button class="btn btn-primary" (click)="saveData()">Export</button>
+    <button class="btn btn-primary" (click)="fx.antWar()">Ant War</button>
+    <button class="btn btn-primary" (click)="fx.saveImageData()">Save</button>
+    <button class="btn btn-primary" (click)="fx.loadImageData(0)">Load</button>
+    <button class="btn btn-primary" (click)="drawShades()">Averages</button>
+    <label class="custom-file">
+      <input type="file" [(ngModel)]="file" (change)="loadData($event)" class="custom-file-input">
+      <span class="custom-file-control"></span>
+    </label>
+    <div class="previews">
+      <app-canvas-preview *ngFor="let data of global.imageDataStore; let i = index;" [imageData]="data" (click)="fx.loadImageData(i)"></app-canvas-preview>
+    </div>
+  </footer>
+</app-mainscreen>

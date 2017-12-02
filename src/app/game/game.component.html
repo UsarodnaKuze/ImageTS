@@ -1,3 +1,17 @@
-<p>
-  game works!
-</p>
+<app-mainscreen>
+  <content>
+    <div  *ngIf="global.imageDataStore.length !== 0; else error" class="preview">
+      <video #previewVideo></video>
+      <canvas #previewCanvas></canvas>
+      <div>{{percentage}}</div>
+    </div>
+    <ng-template #error>
+      <div>Loading game data...</div>
+    </ng-template>
+  </content>
+  <footer>
+    <button class="btn btn-primary" (click)="next()">Next</button>
+    <button class="btn btn-primary" (click)="frameCompare()">Frame</button>
+  </footer>
+</app-mainscreen>
+

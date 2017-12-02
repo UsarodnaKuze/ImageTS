@@ -1,4 +1,12 @@
-<div class="preview">
-  <video #previewVideo></video>
-  <canvas #previewCanvas></canvas>
-</div>
+<app-mainscreen>
+  <content>
+    <div class="preview">
+      <video #previewVideo></video>
+      <canvas #previewCanvas></canvas>
+    </div>
+  </content>
+  <footer>
+    <button class="btn btn-primary" (click)="fx.drawFrame()">Frame</button>
+  </footer>
+</app-mainscreen>
+
