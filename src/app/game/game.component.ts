@@ -48,7 +48,6 @@ export class GameComponent implements AfterViewInit, AfterViewChecked {
         this.frameCompare();
       }
     };
-    // const interval = setInterval(() => this.frameCompare(), 1000);
   }
 
   ngAfterViewChecked(): void {

@@ -19,8 +19,14 @@ export class DebuggerComponent implements OnInit {
     const fxPreview = new FrameExtractorService(this.global, this.previewCanvas.nativeElement, this.previewVideo.nativeElement);
     this.fx = fxPreview;
     this.fx.initCamera(this.previewVideo.nativeElement);
-    // this.previewVideo.nativeElement.ontimeupdate = () => this.drawRealTimeShades(fxPreview);
-    const interval = setInterval(() => this.drawRealTimeShades(fxPreview), 1000);
+    let i = 0;
+    this.previewVideo.nativeElement.ontimeupdate = () => {
+      i++;
+      if (i > this.global.framesToSkip) {
+        i = 0;
+        this.drawRealTimeShades(fxPreview);
+      }
+    };
   }
 
   drawRealTimeShades(fx: FrameExtractorService) {
