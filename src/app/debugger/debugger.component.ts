@@ -16,21 +16,20 @@ export class DebuggerComponent implements OnInit {
   constructor(private global: GlobalService) { }
   fx: FrameExtractorService;
   ngOnInit() {
-    const fxPreview = new FrameExtractorService(this.global, this.previewCanvas.nativeElement, this.previewVideo.nativeElement);
-    this.fx = fxPreview;
+    this.fx = new FrameExtractorService(this.global, this.previewCanvas.nativeElement, this.previewVideo.nativeElement);
     this.fx.initCamera(this.previewVideo.nativeElement);
     let i = 0;
     this.previewVideo.nativeElement.ontimeupdate = () => {
       i++;
       if (i > this.global.framesToSkip) {
         i = 0;
-        this.drawRealTimeShades(fxPreview);
+        this.drawRealTimeShades();
       }
     };
   }
 
-  drawRealTimeShades(fx: FrameExtractorService) {
-    fx.drawFrame();
-    fx.drawExtremeShadesWithMargin();
+  drawRealTimeShades() {
+    this.fx.drawFrame();
+    this.fx.drawExtremeShadesWithMargin();
   }
 }
