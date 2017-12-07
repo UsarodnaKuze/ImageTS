@@ -3,7 +3,7 @@ import {
   ViewChild
 } from '@angular/core';
 import {GlobalService} from '../global.service';
-import {FrameExtractorService} from '../frame-extractor.service';
+import {FrameExtractorService} from '../tools.service';
 import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/observable/from';
 

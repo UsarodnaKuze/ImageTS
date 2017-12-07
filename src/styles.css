@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+.btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -30,6 +35,7 @@ app-mainscreen {
 .content {
   flex: 1 1 100%;
   display: flex;
+  overflow: auto;
 }
 
 .content canvas {
@@ -43,8 +49,11 @@ app-mainscreen {
   width: 100%;
 }
 
-.footer {
+.footer, .header {
+  background: #dadada;
   flex: 0 0 50px;
+  padding: 5px 10px;
+  min-width: 30%;
 }
 
 .drawer {

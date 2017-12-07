@@ -125,7 +125,7 @@ export class FrameExtractorService {
     const averages = this.averageDarknessByDivider(canvas);
     averages.forEach((val) => all += val);
     const margin = all / averages.length;
-    averages.forEach((val, i) => val > (margin * this.global.marginModifier) ? averages[i] = 0 : averages[i] = 255);
+    averages.forEach((val, i) => val > (margin * this.global.marginModifier) ? averages[i] = 255 : averages[i] = 0);
     return averages;
   }
 
@@ -149,7 +149,7 @@ export class FrameExtractorService {
       const xStart = horizontalPos * Math.floor(horizontalDiv);
       const yStart = verticalPos * Math.floor(verticalDiv);
       const draw = () => {
-        const c = 255 - grayArray[i];
+        const c = grayArray[i];
         this.drawRectangle(xStart, yStart, Math.ceil(horizontalDiv), Math.ceil(verticalDiv), canvas, `rgba(${c},${c},${c},1)`);
         horizontalPos++;
         if (horizontalPos === sqrt) { // End of row

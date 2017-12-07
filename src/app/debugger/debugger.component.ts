@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {FrameExtractorService} from '../frame-extractor.service';
+import {FrameExtractorService} from '../tools.service';
 import {GlobalService} from '../global.service';
 
 @Component({
