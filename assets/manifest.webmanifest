@@ -1,5 +1,6 @@
 {
-  "name": "PatternDetector",
+  "name": "ImageTS: PatternDetector",
+  "short_name": "ImageTS",
   "icons": [
     {
       "src": "favicon/android-chrome-192x192.png",
