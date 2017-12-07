@@ -10,6 +10,13 @@
   top: 0;
   left: 0;
 }
+
+app-mainscreen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 @media(min-width: 500px) {
   .main {
     flex-direction: row;
