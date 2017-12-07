@@ -3,7 +3,6 @@
     <div  *ngIf="global.imageDataStore.length !== 0; else error" class="preview">
       <video #previewVideo></video>
       <canvas #previewCanvas></canvas>
-      <div>{{percentage}}</div>
     </div>
     <ng-template #error>
       <div>Loading game data...</div>
@@ -12,6 +11,7 @@
   <footer>
     <button *ngIf="gameStart" class="btn btn-primary" (click)="start()">Start Game</button>
     <button *ngIf="!gameStart" class="btn btn-primary" [disabled]="!allowNext" (click)="next()">Next</button>
+    <h1 class="percent" [ngClass]="percentage >= global.minimalPercentage ? 'green' : ''" *ngIf="!gameStart">{{percentage}}%</h1>
   </footer>
 </app-mainscreen>
 

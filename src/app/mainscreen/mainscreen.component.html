@@ -6,11 +6,13 @@
 </div>
 <div class="content">
   <ng-content select="content"></ng-content>
-  <div class="footer" *ngIf="global.showSettings">
+  <div class="footer" [@flyInOut]="global.showSettings" *ngIf="global.showSettings">
     <label for="divider">Divider</label>
     <input id="divider" type="number" step="1" [(ngModel)]="global.divider">
     <label for="percent">Minimal percentage match</label>
     <input id="percent" type="number" step="10" [(ngModel)]="global.minimalPercentage">
+    <label for="frameSkip">Frames to skip</label>
+    <input id="frameSkip" type="number" step="1" [(ngModel)]="global.framesToSkip">
     <label for="margin">Margin modifier</label>
     <input id="margin" type="number" step=".1" [(ngModel)]="global.marginModifier">
     <label for="x">Width</label>

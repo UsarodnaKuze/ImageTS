@@ -5,7 +5,14 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
+.percent {
+  float: right;
+  font-size: 2em;
+}
 
+.green {
+  color: green;
+}
 .main {
   display: flex;
   flex-direction: column;

@@ -11,6 +11,7 @@ import { MainscreenComponent } from './mainscreen/mainscreen.component';
 import {RouterModule, Routes} from '@angular/router';
 import { CanvasPreviewComponent } from './canvas-preview/canvas-preview.component';
 import {HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([

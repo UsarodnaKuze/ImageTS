@@ -5,6 +5,7 @@ export class GlobalService {
   divider = 8;
   marginModifier = 0.7;
   minimalPercentage = 80;
+  framesToSkip = 3;
   showSettings = false;
   scales = {
     x: 320,

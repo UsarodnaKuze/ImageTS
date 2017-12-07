@@ -38,14 +38,15 @@ export class GameComponent implements AfterViewInit, AfterViewChecked {
     this.fx.initCamera(this.previewVideo.nativeElement);
     let i = 0;
     this.previewVideo.nativeElement.ontimeupdate = () => {
-      // i++;
-      // if (i > 60) {
-      // i = 0;
-      if (!this.indexes || !this.indexes.forEach) {
-        return;
+      i++;
+      if (i > this.global.framesToSkip) {
+        // console.log(i);
+        i = 0;
+        if (!this.indexes || !this.indexes.forEach) {
+          return;
+        }
+        this.frameCompare();
       }
-      this.frameCompare();
-      // }
     };
     // const interval = setInterval(() => this.frameCompare(), 1000);
   }
