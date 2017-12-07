@@ -24,6 +24,8 @@ THE SOFTWARE.
 
 @angular/router@4.4.6 MIT
 
+@angular/animations@4.4.6 MIT
+
 webpack@3.4.1 MIT
 Copyright JS Foundation and other contributors
 
