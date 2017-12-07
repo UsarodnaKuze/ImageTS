@@ -18,17 +18,36 @@ export class GameComponent implements AfterViewInit, AfterViewChecked {
   private indexes: number[];
   private targetDarkness: number[];
   protected percentage = 0;
+  currentGameIndex = -1;
+  allowNext = false;
+  gameStart = true;
 
   constructor(public global: GlobalService, private hc: HttpClient) {
   }
 
   fx: FrameExtractorService;
 
+  start() {
+    this.gameStart = false;
+    this.next();
+  }
+
   init() {
     const fxPreview = new FrameExtractorService(this.global, this.previewCanvas.nativeElement, this.previewVideo.nativeElement);
     this.fx = fxPreview;
     this.fx.initCamera(this.previewVideo.nativeElement);
-    const interval = setInterval(() => this.frameCompare(), 1000);
+    let i = 0;
+    this.previewVideo.nativeElement.ontimeupdate = () => {
+      // i++;
+      // if (i > 60) {
+      // i = 0;
+      if (!this.indexes || !this.indexes.forEach) {
+        return;
+      }
+      this.frameCompare();
+      // }
+    };
+    // const interval = setInterval(() => this.frameCompare(), 1000);
   }
 
   ngAfterViewChecked(): void {
@@ -49,7 +68,15 @@ export class GameComponent implements AfterViewInit, AfterViewChecked {
   }
 
   next() {
-    this.fx.loadImageData(Math.round(this.global.imageDataStore.length * Math.random()) - 1);
+    this.allowNext = false;
+    this.currentGameIndex++;
+    if (this.currentGameIndex === this.global.imageDataStore.length) {
+      alert('Game Over!');
+      this.currentGameIndex = -1;
+      this.gameStart = true;
+      return;
+    }
+    this.fx.loadImageData(this.currentGameIndex);
     this.targetDarkness = this.fx.getExtremes();
     let index = 0;
     const rowLength = this.global.divider;
@@ -83,8 +110,11 @@ export class GameComponent implements AfterViewInit, AfterViewChecked {
       if (videoDarkness[i] === this.targetDarkness[i]) {
         same++;
       }
-      console.log(i, videoDarkness[i], this.targetDarkness[i]);
+      // console.log(i, videoDarkness[i], this.targetDarkness[i]);
     });
+    if (this.percentage > this.global.minimalPercentage) {
+      this.allowNext = true;
+    }
     this.percentage = Math.round((same / this.indexes.length) * 100);
   }
 }

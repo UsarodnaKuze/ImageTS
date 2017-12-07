@@ -1,16 +1,19 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class GlobalService {
   divider = 8;
-    marginModifier = 1;
+  marginModifier = 0.7;
+  minimalPercentage = 80;
+  showSettings = false;
   scales = {
     x: 320,
     y: 320
-  }
-  showPreview: false;
+  };
   imageDataStore: ImageData[] = [];
-  constructor() { }
+
+  constructor() {
+  }
 
   readData(file: File) {
     const reader = new FileReader();

@@ -1,11 +1,19 @@
 <div class="header">
   <button class="btn btn-primary" (click)="router.navigate(['/'])">Home</button>
-  <button class="btn btn-primary" (click)="router.navigate(['/debugger'])">Debugger</button>
   <button class="btn btn-primary" (click)="router.navigate(['/game'])">Game</button>
-  <input type="number" [(ngModel)]="global.divider">
+  <button class="btn btn-primary" (click)="router.navigate(['/debugger'])">Debugger</button>
+  <button class="btn btn-primary" (click)="global.showSettings = !global.showSettings">Settings</button>
 </div>
 <div class="content">
   <ng-content select="content"></ng-content>
+  <div class="footer" *ngIf="global.showSettings">
+    <label for="divider">Divider</label>
+    <input id="divider" type="number" step="1" [(ngModel)]="global.divider">
+    <label for="percent">Minimal percentage match</label>
+    <input id="percent" type="number" step="10" [(ngModel)]="global.minimalPercentage">
+    <label for="margin">Margin modifier</label>
+    <input id="margin" type="number" step=".1" [(ngModel)]="global.marginModifier">
+  </div>
 </div>
 <div class="footer">
   <ng-content select="footer"></ng-content>

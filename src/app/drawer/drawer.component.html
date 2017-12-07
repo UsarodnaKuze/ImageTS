@@ -11,7 +11,7 @@
     <button class="btn btn-primary" (click)="fx.loadImageData(0)">Load</button>
     <button class="btn btn-primary" (click)="drawShades()">Averages</button>
     <label class="custom-file">
-      <input type="file" [(ngModel)]="file" (change)="loadData($event)" class="custom-file-input">
+      <input type="file" (change)="loadData($event)" class="custom-file-input">
       <span class="custom-file-control"></span>
     </label>
     <div class="previews">

@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class MainscreenComponent implements OnInit {
 
-  constructor(protected global: GlobalService, protected router: Router) { }
+  constructor(public global: GlobalService, public router: Router) { }
 
   ngOnInit() {
   }

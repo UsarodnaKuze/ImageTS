@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {FrameExtractorService} from '../frame-extractor.service';
 import {GlobalService} from '../global.service';
 import * as fs from 'file-saver/FileSaver.js';
@@ -12,7 +12,7 @@ export class DrawerComponent implements OnInit, OnChanges {
   @ViewChild('mainCanvas') mainCanvas: ElementRef;
   fx: FrameExtractorService;
 
-  constructor(protected global: GlobalService, private cd: ChangeDetectorRef) {
+  constructor(public global: GlobalService) {
   }
 
   ngOnInit() {

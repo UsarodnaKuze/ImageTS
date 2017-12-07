@@ -59,7 +59,7 @@ export class FrameExtractorService {
 
   // DRAWING
 
-  public antWar(e) {
+  public antWar() {
     this.drawRandom();
     this.grayscale();
   }
@@ -149,7 +149,7 @@ export class FrameExtractorService {
       const xStart = horizontalPos * Math.floor(horizontalDiv);
       const yStart = verticalPos * Math.floor(verticalDiv);
       const draw = () => {
-        const c = grayArray[i];
+        const c = 255 - grayArray[i];
         this.drawRectangle(xStart, yStart, Math.ceil(horizontalDiv), Math.ceil(verticalDiv), canvas, `rgba(${c},${c},${c},1)`);
         horizontalPos++;
         if (horizontalPos === sqrt) { // End of row

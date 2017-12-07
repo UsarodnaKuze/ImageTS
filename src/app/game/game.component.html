@@ -10,8 +10,8 @@
     </ng-template>
   </content>
   <footer>
-    <button class="btn btn-primary" (click)="next()">Next</button>
-    <button class="btn btn-primary" (click)="frameCompare()">Frame</button>
+    <button *ngIf="gameStart" class="btn btn-primary" (click)="start()">Start Game</button>
+    <button *ngIf="!gameStart" class="btn btn-primary" [disabled]="!allowNext" (click)="next()">Next</button>
   </footer>
 </app-mainscreen>
 
