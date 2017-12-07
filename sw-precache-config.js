@@ -8,7 +8,7 @@ module.exports = {
     'dist/**.css'
   ],
   runtimeCaching: [{
-    urlPattern: /^https:\/\/usarodnakuze\.github\.io\/api/,
+    urlPattern: /^https:\/\/andrasczeh\.github\.io/,
     handler: 'networkFirst'
   }, {
     urlPattern: /\/assets\//,

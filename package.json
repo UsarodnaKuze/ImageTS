@@ -12,7 +12,7 @@
     "github": "ng build --prod --output-path docs --base-href ImageTS && sw",
     "e2e": "ng e2e",
     "publish": "npm run build-prod && npm run sw && npm run ngh",
-    "build-prod": "ng build --prod --base-href https://usarodnakuze.github.io/ImageTS/",
+    "build-prod": "ng build --prod --base-href https://andrasczeh.github.io/ImageTS/",
     "sw": "sw-precache --root=dist --config=sw-precache-config.js",
     "ngh": "angular-cli-ghpages",
     "static-serve": "cd dist && live-server --port=4200 --host=192.168.100.7 --entry-file=/index.html"
