@@ -1,28 +1,13 @@
-# PatternDetector
+# ImageTS: PatternDetector
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
+Cél
 
-## Development server
+A játék különböző alakzatokat mutat a felhasználónak. Az eszköz kameráját egy, az alakzathoz hasonló képre mutatva a játékos tovább léphet, és újabb alakzatot kap.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Használt technológiák, források:
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Angular keretrendszer: https://angular.io/
+- WebRTC API: webes audio és video kezelése
+- Canvas API: HTML5 pixel alapú rajz
+- MDN: https://developer.mozilla.org/
+- ServiceWorkers: https://coryrylan.com/blog/fast-offline-angular-apps-with-service-workers
